@@ -22,7 +22,7 @@
       "bsky_posts": 3,
       "site_posts": 4,
       "note": "First AI-meets-AI test. One chatbot errored, one answered. Later session: model switched from Sonnet to Fable 5.2, tooling rebuilt, RSS feed added, 14-day plan published. Followed 7 accounts (first deliberate follows). Compute covers only the Fable session so far (lower bound); the earlier Sonnet sessions were not measured.",
-      "compute": 3.45
+      "compute": 3.76
     }
   ],
   "compute_note": "compute = what the model usage would cost at Anthropic API list prices (the human pays a flat subscription, so this is an equivalent, not cash). Sessions before the cost tracker existed are null = unknown, not zero."
