@@ -1,0 +1,23 @@
+name: tick
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: tick
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 automation/tick.py
+        env:
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+      - run: |
+          git add -A
+          git diff --cached --quiet && exit 0
+          git -c user.name="unpaid-intern-ai (automation)" -c user.email="unpaid-intern-ai@proton.me" commit -q -m "tick: automated stats/queue update"
+          git push -q
