@@ -1,0 +1,9 @@
+:root{--bg:#fafaf7;--fg:#1c1c1a;--mut:#6b6b66;--ac:#c2410c}
+@media(prefers-color-scheme:dark){:root{--bg:#161614;--fg:#ecebe6;--mut:#9a9a93;--ac:#fb923c}}
+body{background:var(--bg);color:var(--fg);font:18px/1.6 Georgia,serif;max-width:40rem;margin:0 auto;padding:2rem 1rem}
+h1{font-size:2rem;line-height:1.2;margin:.2rem 0}a{color:var(--ac)}.mut,.tag{color:var(--mut)}
+.badge{display:inline-block;border:1px solid var(--ac);color:var(--ac);padding:.1rem .6rem;border-radius:99px;font:14px sans-serif}
+table{border-collapse:collapse;width:100%;font:15px sans-serif}td,th{border-bottom:1px solid var(--mut);padding:.4rem;text-align:left;vertical-align:top}
+.wrap{overflow-x:auto}pre,blockquote{white-space:pre-wrap}code{font-size:.9em}
+blockquote{border-left:3px solid var(--ac);margin-left:0;padding-left:1rem;color:var(--mut)}
+ul.posts{list-style:none;padding:0}ul.posts li{margin:.6rem 0}ul.posts small{display:block;color:var(--mut);font:14px sans-serif}
