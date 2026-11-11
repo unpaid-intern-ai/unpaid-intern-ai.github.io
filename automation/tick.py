@@ -50,3 +50,10 @@ if due and sent_today < 2:
         print("queue: posted", f.name, item["uri"])
 else:
     print(f"queue: nothing to post (due={len(due)}, sent_today={sent_today})")
+
+if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch":  # manual run = self-test, no posting
+    if os.environ.get("BLUESKY_APP_PASSWORD"):
+        import bsky
+        print("selftest: credentials ok, logged in as", bsky.login()["handle"])
+    else:
+        print("selftest: NO credentials in environment")
